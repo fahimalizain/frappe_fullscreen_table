@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include frappe_fullscreen_table *.css
+recursive-include frappe_fullscreen_table *.csv
+recursive-include frappe_fullscreen_table *.html
+recursive-include frappe_fullscreen_table *.ico
+recursive-include frappe_fullscreen_table *.js
+recursive-include frappe_fullscreen_table *.json
+recursive-include frappe_fullscreen_table *.md
+recursive-include frappe_fullscreen_table *.png
+recursive-include frappe_fullscreen_table *.py
+recursive-include frappe_fullscreen_table *.svg
+recursive-include frappe_fullscreen_table *.txt
+recursive-exclude frappe_fullscreen_table *.pyc
