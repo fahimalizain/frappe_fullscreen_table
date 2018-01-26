@@ -1,5 +1,6 @@
 {
 	"js/frappe_fullscreen_table.min.js" : [
-		"public/js/FormWatcher.js"
+		"public/js/FormWatcher.js",
+		"public/js/templates/ffe_column_selector.html"
 	]
 }
