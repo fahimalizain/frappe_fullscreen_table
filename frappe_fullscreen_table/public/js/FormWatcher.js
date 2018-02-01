@@ -3,12 +3,13 @@ frappe.provide("frappe_fullscreen_table");
 $.extend(frappe_fullscreen_table, {
 	setup_form: function(event) {
 		var route = frappe.get_route();	
+		var button_label = "Full Screen Edit";
 		
 		if (route[0] === "Form") {
 			frappe.ui.form.on(route[1], "onload", function() {
 				$.each(cur_frm.fields_dict, function(i, field) {
 					if (field.df.fieldtype === "Table" && field.grid != null) {
-						field.grid.add_custom_button("Full Screen Edit", function() 
+						field.grid.add_custom_button(button_label, function() 
 						{
 							// d.table is gird obj ref
 							var d = new frappe.ui.Dialog({
@@ -55,6 +56,8 @@ $.extend(frappe_fullscreen_table, {
 							d.size = "large";
 							d.show();
 						});
+						
+						field.grid.custom_buttons[button_label].attr("type", "button");
 					}
 				}); 
 			});
