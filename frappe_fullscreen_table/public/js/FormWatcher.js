@@ -27,7 +27,7 @@ $.extend(frappe_fullscreen_table, {
 								// for any link fields server fetch
 								setTimeout(function() {							
 									frappe.after_ajax(function() {
-										d.table.refresh();
+										cur_dialog.table.refresh();
 									});
 								}, 500);
 							}
@@ -48,8 +48,6 @@ $.extend(frappe_fullscreen_table, {
 										frappe.model.events[field.df.options]["*"].splice(i, 1);
 									}
 								});
-								
-								d = null;
 							}
 							
 							// check from inspect
@@ -71,10 +69,10 @@ $.extend(frappe_fullscreen_table, {
 			frm: cur_frm
 		});
 		d.table = table;
-		frappe_fullscreen_table.setup_custom_visible_columns(d);
 		// Set grid.visible_columns before make and refresh
-		table.refresh();
 		table.make();
+		frappe_fullscreen_table.setup_custom_visible_columns(d);
+		table.refresh();
 	},
 	
 	set_parent_dialog_attr: function(d) {
