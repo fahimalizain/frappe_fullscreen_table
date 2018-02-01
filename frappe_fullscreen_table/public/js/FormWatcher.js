@@ -27,7 +27,7 @@ $.extend(frappe_fullscreen_table, {
 								// for any link fields server fetch
 								setTimeout(function() {							
 									frappe.after_ajax(function() {
-										table.refresh();
+										d.table.refresh();
 									});
 								}, 500);
 							}
@@ -49,7 +49,7 @@ $.extend(frappe_fullscreen_table, {
 									}
 								});
 								
-								delete table;
+								d = null;
 							}
 							
 							// check from inspect
@@ -233,15 +233,6 @@ $.extend(frappe_fullscreen_table, {
 		});
 	}
 });
-
-// d -> frappe.ui.Dialog
-function customize_columns(parent_d) {
-	
-}
-
-function calc_visible_columns(d) {
-	
-}
 
 // Only on desktop
 if( !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
